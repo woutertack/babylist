@@ -2,15 +2,16 @@
 
 
 @section('content')
+
 <div class="flex flex-col max-w-xs m-auto sm:justify-center items-center pt-5 mt-10 sm:pt-0 rounded-3xl ">
         <div class="w-full sm:max-w-md px-6 py-4 bg-white shadow-md rounded-xl">
             <div class="flex items-center justify-center mt-4">
-                <h2 class="font-bold text-2xl ">{{__('Give access code')}}</h2>
+                <h2 class="font-bold text-lg">{{__('Give access code wishlist')}}</h2>
             </div>
             @if (session('error'))
                 <div>{{ session('error') }}</div>
             @endif
-            <form method="POST" action="{{ route('access')}}" class="py-10">
+            <form method="POST" action="{{ route('accessList')}}" class="py-10">
                 @csrf
                 <!-- Code Wishlist -->
                 <div>
@@ -23,6 +24,7 @@
             </form>
         </div>
     </div>
+
 
 
 

@@ -18,7 +18,7 @@
                 <p class="rounded-b-2xl text-sm p-2 border-2 border-t-0 border-cyan-600  text-cyan-600">{{__('Make your babylist here!')}}</p>
             </a>
 
-            <a href="{{ route('buy-from-list') }}" class=" bg-slate-500rounded-2xl   ">
+            <a href="{{ route('buyList') }}" class=" bg-slate-500rounded-2xl   ">
                 <img src="/img/buy-from-list.webp" class="rounded-t-2xl object-contain h-28 w-13 ">
                 <p class="rounded-b-2xl text-sm p-2 border-2 border-t-0 border-cyan-600 text-cyan-600">{{__('Buy gifts!')}}</p>
             </a>

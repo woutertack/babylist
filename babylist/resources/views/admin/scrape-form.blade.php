@@ -90,6 +90,22 @@
                         </tr>
                     @endforeach
                 </table>
+                <h2>{{$shops['littleMoustache']}}</h2>
+                <table class="table table-striped my-5">
+                    @foreach ($littleMoustacheCategories as $category)
+                        <tr>
+                            <td>{{ $category->title}}</td>
+                            <td>
+                                <form method="post" action="{{ route('scrape.articles') }}">
+                                    @csrf
+                                    <input type="hidden" name="url" value="{{ $category->url}}">
+                                    <input type="hidden" name="shop" value="littleMoustache">
+                                    <button type="submit" class="py-2 px-2  text-xs bg-white hover:bg-indigo-700 hover:text-white focus:ring-indigo-500 focus:ring-offset-indigo-200 text-indigo-500  transition ease-in duration-200 text-center shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg">{{__('Scrape all articles')}}</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </table>
 
 
             </div>

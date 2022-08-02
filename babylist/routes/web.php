@@ -6,10 +6,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ScrapeController;
 use App\Http\Controllers\Guest\GuestController;
 use App\Http\Controllers\Guest\GuestWishlistController;
+use App\Http\Controllers\ShoppingCart\CheckoutController;
+use App\Http\Controllers\ShoppingCart\WebhookController;
 use App\Http\Controllers\wishlist\articles\AddArticles;
 use App\Http\Controllers\wishlist\ArticlesWishlistController;
 use App\Http\Controllers\WishList\create\CreateWishlistController;
 use App\Http\Controllers\wishlist\WishlistController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +30,7 @@ use App\Http\Controllers\wishlist\WishlistController;
 Route::get('/', [AdminController::class, 'adminCheck'])->name('/');
 
 //Visitor(logged in) make wishlists + add articles
-    // Make a wishlist
+    // Make a wishlist(works)
     Route::get('/make-list', [WishlistController::class, 'showListForm'])->middleware('auth')->name('make-list');
     Route::post('/make-list', [CreateWishlistController::class, 'newList'])->middleware('auth')->name('newListPOST');
 
@@ -46,12 +49,17 @@ Route::get('/', [AdminController::class, 'adminCheck'])->name('/');
 // Guest buying from wishlist
 
 
-    Route::get('/buy-from-list' , [GuestController::class, 'show'])->name('buy-from-list');;
-    Route::post('/buy-from-list' , [GuestController::class, 'access'])->name('access');
+    Route::get('/buyList' , [GuestController::class, 'show'])->name('buyList');;
+    Route::post('/buyList' , [GuestController::class, 'accessList'])->name('accessList');
 
-    Route::get('/guest/detaillist/{id}', [GuestWishlistController::class, 'UserListDetail'])->name('detaillistwcode');
-    Route::post('/guest/detaillist/{id}', [GuestWishlistController::class, 'AddWinkelmandje'])->name('AddWinkelmandje');
 
+
+    Route::get('/buyList/detaillist/{id}', [GuestWishlistController::class, 'guestListDetail'])->name('detailList');
+    Route::post('/buyList/detaillist/{id}', [GuestWishlistController::class, 'addShopingCart'])->name('addShopingCart');
+
+    Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
+    Route::get('/checkout/success' , [CheckoutController::class, 'success'])->name('checkout.success');
+    Route::post('/webhooks/mollie',[WebhookController::class, 'handle'])->name('webhooks.mollie');
 
 
 // Admin

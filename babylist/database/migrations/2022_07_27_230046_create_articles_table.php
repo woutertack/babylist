@@ -15,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->constrained();
+            /*$table->foreignId('category_id')->constrained();*/
             $table->string('title');
             $table->string('slug');
-            $table->float('price');
+            $table->string('price');
+            $table->string('src');
+            $table->text('description');
             $table->timestamp('scraped_on')->useCurrent();
             $table->timestamps();
         });

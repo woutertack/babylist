@@ -1,10 +1,10 @@
 {
     "Welcome": "Welkom",
-    "The best site to create wishlists for babies!": "De beste site om baby-wishlists te maken!",
+    "The best site to create wishlists for babies!": "De beste site om baby-wenslijsten te maken!",
     "Make your babylist here!": "Maak je babylijst hier!",
     "Buy gifts!": "Koop cadeaus!",
-    "New wishlist": "nieuwe wishlist",
-    "Name wishlist": "Naam wishlist",
+    "New wishlist": "nieuwe wenslijst",
+    "Name wishlist": "Naam wenslijst",
     "Name Baby": "Naam baby",
     "Secret code (to share with friends)": "Geheime code (voor toegang anderen)",
     "Scrape data here": "Schraap hier gegevens",
@@ -15,9 +15,13 @@
     "Articles": "Artikelen",
     "Watch or change articles": "Bekijk of voeg artikelen toe",
     "Make new wishlist": "Maak nieuwe wenslijst",
-    "Give access code": "Geef toegangscode",
-   
-   
+    "Give access code wishlist": "Geef toegangscode wenslijst",
+    "Your articles": "Jouw artikelen",
+    "Add to wishlist": "Voeg toe aan wenslijst",
+    "Search an article": "Zoek naar een artikel",
+    "Buy article": "Koop artikel",
+
+
 
 
     " are gratefull": " zijn je heel erg dankbaar",

@@ -50,7 +50,7 @@ class ArticlesWishlistController extends Controller
         $id->article_id = $articleId;
         $id->save();
 
-        return redirect(route('newArticle' , $listId));
+        return redirect(route('listdetail' , $listId));
     }
 
 

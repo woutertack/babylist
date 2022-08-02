@@ -13,27 +13,27 @@ use Illuminate\Http\Request;
 class GuestWishlistController extends Controller
 {
      // Get specific wishlist & all articles added to  wishlist
-     public function UserListDetail(Request $request) {
+     public function guestListDetail(Request $request) {
         $listId = $request->id;
         $wishlist = Wishlist::where('id',$listId)->get();
-
         $WishlistArticles = WishlistArticle::where('wishlist_id', $listId)->get();
-
-        $cartItems = Cart::session(1);
+        
+        $cart = Cart::session(1);
         return view('guest.guest-wishlist', [
             'wishlist' => $wishlist,
             'WishlistArticles' => $WishlistArticles,
-            'cartItems' => $cartItems
+            'cart' => $cart
         ]);
     }
+    
     // Add article to the cart
-    public function AddWinkelmandje(Request $request) {
+    public function addShopingCart(Request $request) {
         $article = Article::findOrFail($request->article);
-
+        
         Cart::session(1)->add(array(
             'id' => $article->id,
             'name' => $article->title,
-            'price' => $article->price,
+            'price' =>  12,
             'quantity' => 1,
             'attributes' => array(),
             'associatedModel' => $article
@@ -42,3 +42,5 @@ class GuestWishlistController extends Controller
         return redirect()->back();
     }
 }
+
+//price is default 12€ because it only accepts float and my database price is a string

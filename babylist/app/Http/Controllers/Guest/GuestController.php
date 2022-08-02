@@ -14,7 +14,7 @@ class GuestController extends Controller
         return view('guest.access');
     }
     // Login to a wishlist with given private code (Visitor section)
-    public function access(Request $request) {
+    public function accessList(Request $request) {
 
 
         try {
@@ -32,6 +32,6 @@ class GuestController extends Controller
             report($exception);
             return back()->withError($exception->getMessage())->withInput();
         }
-        return redirect(route('detaillistwcode' , $wishListid));
+        return redirect(route('detailList' , $wishListid));
     }
 }
