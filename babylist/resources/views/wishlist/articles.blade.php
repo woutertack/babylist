@@ -6,24 +6,6 @@
         @foreach ($wishlist as $wishlist )
 
 
-                <!-- <div>
-                    <label class="block text-gray-700 text-sm font-bold mb-2 mt-5"for="name">Naam Babylist</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"type="text" name="name" value="{{ $wishlist->name}}" >
-
-                    <label class="block text-gray-700 text-sm font-bold mb-2 mt-5"for="babyName">Naam Baby</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"type="text" name="babyName" value="Voor {{ $wishlist->babyName}}" >
-
-                    <label class="block text-gray-700 text-sm font-bold mb-2 mt-5"for="babyName">Gemaakt door</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"type="text" name="babyName" value="{{ $wishlist->user->name}}">
-
-                    <label class="block text-gray-700 text-sm font-bold mb-2 mt-5"for="babyName">Gemaakt op</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"type="text" name="babyName" value="{{ $wishlist->created_at}}" >
-
-                    <label class="block text-gray-700 text-sm font-bold mb-2 mt-5"for="code">Code</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"type="text" name="code" value="{{ $wishlist->code}}" >
-                </div> -->
-               <!-- deletelist -->
-
             <div class="w-full sm:max-w-md px-6 py-4 bg-white shadow-md rounded-xl">
                 <div class="flex items-center justify-center mt-4">
                     <h2 class="font-bold text-xl ">{{__('Your articles')}} </h2>
@@ -44,19 +26,19 @@
                             <!-- Info wenslijst-->
                             <div class="justify-start">
                                 <p>Prijs: {{$article->article->price}} </p>
-                                {{--<details>
-                                    <summary>Beschrijving</summary>
-                                    {{$article->article->description}}
-                                </details>
---}}
+                              
                             </div>
                             <!-- Image wenslijst-->
                             <div class="mr-5 w-20 h-15">
-                                <img src={{$article->article->src}} alt="IMG">
+                                <img src="{{$article->article->src}}" alt="img">
                             </div>
                         </div>
                         <!-- deletearticle -->
-
+                        <form action="{{ route('deleteListArticle' ,[$wishlist->id , $article->article->id]) }}" method="POST">
+                            @csrf
+                            @method("delete")
+                            <button type="submit" class="py-2 px-2  text-sm bg-white hover:bg-indigo-700 hover:text-white focus:ring-indigo-500 focus:ring-offset-indigo-200 text-indigo-500  transition ease-in duration-200 text-center shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg">Delete</button>
+                        </form>                
                     </div>
                     @endforeach
                 </div>

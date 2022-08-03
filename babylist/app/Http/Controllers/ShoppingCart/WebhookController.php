@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\ShoppingCart;
 
 use App\Http\Controllers\Controller;
+use App\Mail\sendPaymentMail;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Mollie\Laravel\Facades\Mollie;
 
 class WebhookController extends Controller
@@ -25,7 +27,7 @@ class WebhookController extends Controller
             $order->save();    
 
             Log::alert('betaling is gelukt');
-
+           
         }
     
         

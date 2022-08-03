@@ -23,6 +23,7 @@
                 <p class="rounded-b-2xl text-sm p-2 border-2 border-t-0 border-cyan-600 text-cyan-600">{{__('Buy gifts!')}}</p>
             </a>
         </div>
+        <p class="mssg text-2xl text-cyan-600 pt-6">{{ session('mssg') }}</p>
     </div>
 
 </div>

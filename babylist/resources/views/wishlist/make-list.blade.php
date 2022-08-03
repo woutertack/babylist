@@ -4,8 +4,8 @@
 @section('content')
 
 <div class="flex flex-col max-w-xs m-auto sm:justify-center items-center pt-5 mt-10 sm:pt-0 rounded-2xl">
-        <div class="w-full sm:max-w-md px-6 py-4 bg-white shadow-md border-2 sm:rounded-lg">
-            <div class="flex items-center justify-center mt-4 pb-4">
+        <div class="w-full sm:max-w-md px-6 pt-4 bg-white shadow-md border-2 rounded-xl">
+            <div class="flex items-center justify-center mt-4 ">
                 <h2 class="font-bold text-xl uppercase">{{__('New wishlist')}}</h2>
             </div>
             <form method="POST" action="{{ route('newListPOST') }}" class="py-10">

@@ -6,7 +6,11 @@
     <div class="container">
         <div class="row flex justify-center">
             <div class="col-sm-8 offset-sm-2">
+            <div class="mt-5 mb-2 flex justify-end">
+                        <a href="{{ route('articles.overview')}}" class="text-xs  py-2 px-4  bg-white hover:bg-indigo-700 hover:text-white focus:ring-indigo-500 focus:ring-offset-indigo-200 text-indigo-600 w-full transition ease-in duration-200 text-center font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">{{__('See all articles')}}</a>
+                </div>
                 <h1 class="flex justify-center text-xl my-5">{{__('Scrape data here')}}</h1>
+                
                 <form action="{{ route('scrape.categories')}}" method="post">
                     @csrf
                     <div class="form-group">
@@ -42,7 +46,7 @@
 
 
 
-                <h2>{{$shops['dreamBaby']}}</h2>
+                <h2 class="mt-4 underline underline-offset-2 text-indigo-500">{{$shops['dreamBaby']}}</h2>
                 <table class="table table-striped my-5">
                     @foreach ($dreamBabyCategories as $category)
                         <tr>
@@ -58,7 +62,7 @@
                         </tr>
                     @endforeach
                 </table>
-                <h2>{{$shops['mimibaby']}}</h2>
+                <h2 class="mt-4 underline underline-offset-2 text-indigo-500">{{$shops['mimibaby']}}</h2>
                 <table class="table table-striped my-5">
                     @foreach ($mimibabyCategories as $category)
                         <tr>
@@ -74,7 +78,7 @@
                         </tr>
                     @endforeach
                 </table>
-                <h2>{{$shops['Hema']}}</h2>
+                <h2 class="mt-4 underline underline-offset-2 text-indigo-500">{{$shops['Hema']}}</h2>
                 <table class="table table-striped my-5">
                     @foreach ($hemaCategories as $category)
                         <tr>
@@ -90,7 +94,7 @@
                         </tr>
                     @endforeach
                 </table>
-                <h2>{{$shops['littleMoustache']}}</h2>
+                <h2 class="mt-4 underline underline-offset-2 text-indigo-500">{{$shops['littleMoustache']}}</h2>
                 <table class="table table-striped my-5">
                     @foreach ($littleMoustacheCategories as $category)
                         <tr>

@@ -32,7 +32,7 @@ class ArticlesWishlistController extends Controller
                 $articles = Article::paginate(25);
             }
 
-            return view('wishlist.create-article', [
+            return view('wishlist.add-article', [
                  'articles'=> $articles,
                  'wishlistId' => $wishlistId
             ]);
@@ -53,5 +53,13 @@ class ArticlesWishlistController extends Controller
         return redirect(route('listdetail' , $listId));
     }
 
+    // Delete article from wishlist
+    public function deleteListArticle(Request $request) {
+        $listId = $request->wishlist_id;
+        $articleId = $request->article_id;
+        WishlistArticle::where('article_id',$articleId)->where('wishlist_id',$listId)->delete();
+        return redirect(route('listdetail' , $listId));
+    }
 
+    
 }

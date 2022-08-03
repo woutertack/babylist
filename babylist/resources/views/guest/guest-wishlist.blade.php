@@ -20,13 +20,14 @@
                             </li>
                         @endforeach
                     </ul>
-                    <h3 class="pt-3 uppercase text-black">Totaal: €{{$cart->getTotal()}}
+                    <h3 class="pt-3 uppercase text-black">{{__('Total')}}: €{{$cart->getTotal()}}
                 </div> 
-                <form action="{{route('checkout')}}" method="get"> 
+                <form action="{{route('checkout')}}" class="pt-5" method="get"> 
                     <input type="hidden" name="wishlist" value={{$wishlist->id}}>
-                    <input type="text" class="" name="name" placeholder="naam" required>
-                    <input type="text" class="" placeholder="Mededeling" name="remarks"><br>
-                    <button type="submit" class="p-5 bg-black text-white">Pay</button> 
+                    <input type="text" class="block mt-1 mb-2 w-full  rounded-md drop-shadow-md" name="name" placeholder="Naam" required>
+                    <input type="text" class="block mt-1 mb-2 w-full  rounded-md drop-shadow-md" name="email" placeholder="Email" required>
+                    <input type="text" class="block mt-1  mb-2 w-full  rounded-md drop-shadow-md" placeholder="Mededeling" name="remarks"><br>
+                    <button type="submit" class="text-base  py-2 px-4 mt-1 bg-indigo-500 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">{{__('Pay')}}</button> 
                 </form>  
             </div>
         </div>

@@ -8,13 +8,13 @@
 
 
 <div class="flex flex-col max-w-xs m-auto sm:justify-center items-center pt-5 mt-10 sm:pt-0 rounded-3xl ">
-        <div class="w-full sm:max-w-md px-6 py-4 bg-white shadow-md rounded-xl">
+        <div class="w-full sm:max-w-md px-6 py-2 bg-white shadow-md rounded-xl">
             <div class="flex items-center justify-center mt-4">
                 <h2 class="font-bold text-2xl ">{{__('Your wishlist')}}</h2>
             </div>
 
             <div class=" flex justify-end">
-                <a href=" {{ route('make-list')}}" class="py-2 px-4 mt-8 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg  "> {{__('Make new wishlist')}}</a>
+                <a href=" {{ route('make-list')}}" class="py-2 px-4 mt-8 mb-3 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg  "> {{__('Make new wishlist')}}</a>
             </div>
             @foreach ($wishlists as $wishlist )
             <div class="flex flex-col sm:justify-center items-center pt-6 mt-5 mb-5 rounded-xl">

@@ -11,7 +11,7 @@ class WishlistController extends Controller
 {
     //create a wishlist
     public function showListForm() {
-        return view('make-list');
+        return view('wishlist.make-list');
     }
 
     //show wishlists for visitor

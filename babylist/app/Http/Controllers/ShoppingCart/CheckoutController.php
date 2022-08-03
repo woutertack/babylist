@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\ShoppingCart;
 
 use App\Http\Controllers\Controller;
+use App\Mail\sendPaymentMail;
 use App\Models\Order;
 use Illuminate\Http\Request;
 
 use Darryldecode\Cart\Facades\CartFacade as Cart;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Mollie\Laravel\Facades\Mollie;
 
 class CheckoutController extends Controller
@@ -24,6 +26,7 @@ class CheckoutController extends Controller
         $order = new Order();
         $order->name = $r->name;
         $order->remarks = $r->remarks;
+        $order->email = $r->email;
         $order->wishlist_id = $r->wishlist;
         $order->total = $total;
         $order->status = 'pending';
@@ -55,7 +58,8 @@ class CheckoutController extends Controller
             ],
         ]);
     
-        
+     
+        Mail::to($order->email)->send(new sendPaymentMail($order));
 
         // redirect customer to Mollie checkout page
         return redirect($payment->getCheckoutUrl(), 303);
@@ -64,7 +68,7 @@ class CheckoutController extends Controller
 
     public function success() {
         Cart::session(1)->clear();
-        return 'Jouw bestelling is goed binnengekomen';
+        return redirect('/')->with('mssg', 'Bedankt voor je bestelling!');
     }
 
 
