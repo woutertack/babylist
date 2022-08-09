@@ -29,11 +29,12 @@ class GuestWishlistController extends Controller
     // Add article to the cart
     public function addShopingCart(Request $request) {
         $article = Article::findOrFail($request->article);
-        
+        $cents = filter_var($article->price, FILTER_SANITIZE_NUMBER_INT);
+        $price = floatval($cents / 100);
         Cart::session(1)->add(array(
             'id' => $article->id,
             'name' => $article->title,
-            'price' =>  12,
+            'price' =>  $price,
             'quantity' => 1,
             'attributes' => array(),
             'associatedModel' => $article

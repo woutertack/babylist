@@ -8,21 +8,22 @@
         <div class="w-full sm:max-w-md mb-5 px-6 py-4 bg-white shadow-md rounded-xl">
             <div class="row my-5">
                 <div class="col-sm-6offset sm-3p-5bg-warning">
-                <div class="flex items-center underline underline-offset-2 mb-5 mt-4">
-                    <h2 class="font-bold text-xl uppercase">winkelmandje</h2>
-                    <img src="/img/shoppingcart.png" class="w-8 h-7 ml-3">
+                <div class="flex justify-center items-center underline underline-offset-2 mb-5 mt-4">
+                    <h2 class="font-bold text-xl uppercase flex justify-center">{{__('shoppingcart')}}</h2>
+                
                 </div>
-                    <ul class="list-group">
+                    <ul class="list-group  border-2 rounded-md border-indigo-200">
                         @foreach($cart->getContent() as $item)
-                            <li class="list-group-item">
+                            <li class="list-group-item p-2 text-sm">
                                 {{$item->name}}
-                            €{{$item->price}}
+                                €{{$item->price}}
                             </li>
                         @endforeach
                     </ul>
-                    <h3 class="pt-3 uppercase text-black">{{__('Total')}}: €{{$cart->getTotal()}}
+                    <h3 class="pt-3 uppercase text-black flex justify-center">{{__('Total')}}: €{{$cart->getTotal()}}
                 </div> 
-                <form action="{{route('checkout')}}" class="pt-5" method="get"> 
+                <h2 class="flex justify-center text-xl mt-8 uppercase">Info</h2>
+                <form action="{{route('checkout')}}" class="pt-2" method="get"> 
                     <input type="hidden" name="wishlist" value={{$wishlist->id}}>
                     <input type="text" class="block mt-1 mb-2 w-full  rounded-md drop-shadow-md" name="name" placeholder="Naam" required>
                     <input type="text" class="block mt-1 mb-2 w-full  rounded-md drop-shadow-md" name="email" placeholder="Email" required>
@@ -50,19 +51,16 @@
                         <div class="flex justify-between mt-2">
                             <!-- Info wenslijst-->
                             <div class="justify-start">
-                                <p>Prijs: {{$article->article->price}} </p>
+                                <p>{{__('Price')}}: {{$article->article->price}} </p>
                               
-                                <!-- <details>
-                                    <summary>Beschrijving</summary>
-                                    {{$article->article->description}}
-                                </details> -->
-
+                              
                             </div>
                             <!-- Image wenslijst-->
                             <div class="mr-5 w-20 h-15">
                                 <img src="{{$article->article->src}}" alt="IMG">
                             </div>
                         </div>
+                        
                         <form method="POST">
                             @csrf
                             <input type="hidden" name="article" value="{{$article->article->id}}">

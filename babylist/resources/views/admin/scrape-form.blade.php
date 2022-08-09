@@ -15,7 +15,7 @@
                     @csrf
                     <div class="form-group">
                         <div>
-                            <label for="shop" class="flex justify-center text-base pb-1">Webshop</label>
+                            <label for="shop" class="flex justify-center text-base pb-1">{{__('webshop')}}</label>
                         </div>
                         <div class="flex justify-center">
                             <select name="shop" id="shop" class="form-control text-base">
@@ -78,22 +78,7 @@
                         </tr>
                     @endforeach
                 </table>
-                <h2 class="mt-4 underline underline-offset-2 text-indigo-500">{{$shops['Hema']}}</h2>
-                <table class="table table-striped my-5">
-                    @foreach ($hemaCategories as $category)
-                        <tr>
-                            <td>{{ $category->title}}</td>
-                            <td>
-                                <form method="post" action="{{ route('scrape.articles') }}">
-                                    @csrf
-                                    <input type="hidden" name="url" value="{{ $category->url}}">
-                                    <input type="hidden" name="shop" value="Hema">
-                                    <button type="submit" class="py-2 px-2  text-xs bg-white hover:bg-indigo-700 hover:text-white focus:ring-indigo-500 focus:ring-offset-indigo-200 text-indigo-500  transition ease-in duration-200 text-center shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg">{{__('Scrape all articles')}}</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                </table>
+            
                 <h2 class="mt-4 underline underline-offset-2 text-indigo-500">{{$shops['littleMoustache']}}</h2>
                 <table class="table table-striped my-5">
                     @foreach ($littleMoustacheCategories as $category)

@@ -71,14 +71,14 @@ Route::get('/', [AdminController::class, 'adminCheck'])->name('/');
 
 // Admin
     //scrape page
-    Route::get('/scrape', [ScrapeController::class, 'show'])->name('scraper');
-    Route::post('/scrape/categories', [ScrapeController::class, 'scrapeCategories'])->name('scrape.categories');
-    Route::post('/scrape/articles', [ScrapeController::class, 'scrapeArticles'])->name('scrape.articles');
+    Route::get('/scrape', [ScrapeController::class, 'show'])->middleware('auth')->name('scraper');
+    Route::post('/scrape/categories', [ScrapeController::class, 'scrapeCategories'])->middleware('auth')->name('scrape.categories');
+    Route::post('/scrape/articles', [ScrapeController::class, 'scrapeArticles'])->middleware('auth')->name('scrape.articles');
     
     //see all articles
-    Route::get('/articles', [AllArticlesController::class, 'allArticles'])->name('articles.overview');
+    Route::get('/articles', [AllArticlesController::class, 'allArticles'])->middleware('auth')->name('articles.overview');
     
     //delete articles
-    Route::delete('/scrape/delete/{article_id}',[AllArticlesController::class, 'deleteArticle'])->name('deleteArticle');
+    Route::delete('/scrape/delete/{article_id}',[AllArticlesController::class, 'deleteArticle'])->middleware('auth')->name('deleteArticle');
 
 require __DIR__.'/auth.php';

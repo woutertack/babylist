@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            /*$table->foreignId('category_id')->constrained();*/
+            
             $table->string('title');
             $table->string('slug');
             $table->string('price');
             $table->string('src');
-            $table->text('description');
+            
+            /*$table->foreignId('category_id')->constrained();*/
             $table->timestamp('scraped_on')->useCurrent();
             $table->timestamps();
         });

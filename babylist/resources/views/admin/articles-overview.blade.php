@@ -16,7 +16,7 @@
                         <div class="flex justify-between mt-2">
                           
                             <div class="justify-start">
-                                <p>Prijs: {{$article->price}} </p>
+                                <p>{{__('Price')}}: €{{$article->price}} </p>
                               
                             </div>
                            
@@ -27,7 +27,7 @@
                         <form action="{{ route('deleteArticle' , $article->id )}}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="text-xs px-2 py-2 flex justify-center bg-indigo-500 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white  transition ease-in duration-200 text-center font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg">Delete</button>
+                            <button type="submit" class="text-xs px-2 py-2 flex justify-center bg-indigo-500 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white  transition ease-in duration-200 text-center font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg">{{__('Delete')}}</button>
                         </form>              
                     </div>
                     

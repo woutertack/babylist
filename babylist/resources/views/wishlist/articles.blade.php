@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="mt-4 flex justify-end">
-                    <a href=" {{ route('newArticle' , $wishlist->id)}}" class="text-xs m-5 py-2 px-4 mt-8 bg-indigo-500 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "> + Voeg een nieuw artikel toe</a>
+                    <a href=" {{ route('newArticle' , $wishlist->id)}}" class="text-xs m-5 py-2 px-4 mt-8 bg-indigo-500 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "> + {{__('Add a new article')}}</a>
                 </div>
 
                 <div>
@@ -25,7 +25,7 @@
                         <div class="flex justify-between mt-2">
                             <!-- Info wenslijst-->
                             <div class="justify-start">
-                                <p>Prijs: {{$article->article->price}} </p>
+                                <p>{{__('Price')}}: {{$article->article->price}} </p>
                               
                             </div>
                             <!-- Image wenslijst-->
@@ -37,7 +37,7 @@
                         <form action="{{ route('deleteListArticle' ,[$wishlist->id , $article->article->id]) }}" method="POST">
                             @csrf
                             @method("delete")
-                            <button type="submit" class="py-2 px-2  text-sm bg-white hover:bg-indigo-700 hover:text-white focus:ring-indigo-500 focus:ring-offset-indigo-200 text-indigo-500  transition ease-in duration-200 text-center shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg">Delete</button>
+                            <button type="submit" class="py-2 px-2  text-sm bg-white hover:bg-indigo-700 hover:text-white focus:ring-indigo-500 focus:ring-offset-indigo-200 text-indigo-500  transition ease-in duration-200 text-center shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg">{{__('Delete')}}</button>
                         </form>                
                     </div>
                     @endforeach

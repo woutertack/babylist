@@ -1,10 +1,10 @@
 @component('mail::message')
-# Thanky you for your order on Babylist!
+{{__('Thank you for your order on Babylist!')}}
 
 
 
 @component('mail::button', ['url' => ''])
-Your total order payment: €{{ $order->total}}
+{{__('Your total order payment')}}: €{{ $order->total}}
 
 @endcomponent
 

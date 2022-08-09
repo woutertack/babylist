@@ -49,11 +49,6 @@
     
         @yield('content')
         
-        <!-- <div class="absolute bottom-0 w-screen">
-                
-                
-                <footer class="h-12 m-auto pb-5 pt-3  text-xs text-center bg-lightblue ">© 2022 Copyright - Babylist - Wouter Tack</footer>
-        </div> -->
 
     </body>
 </html>

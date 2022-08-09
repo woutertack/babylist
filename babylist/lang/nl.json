@@ -23,10 +23,11 @@
     "Total": "Totaal",
     "Access code": "Toegangscode",
     "See all articles": "Bekijk alle artikelen",
-
-
-
-
+    "shoppingcart": "winkelmandje",
+    "webshop": "webwinkel",
+    "Add a new article": "Voeg een nieuw artikel toe",
+    "Your total order payment": "Uw totale bestelling betaling ",
+    "Thank you for your order on Babylist!": "Bedankt voor uw bestelling bij Babylist!",
     " are gratefull": " zijn je heel erg dankbaar",
     "ATTENTION! This password is for accessing the list. Those who you want to invite, will need this password. Don't choose a personal password.": "LET OP! Dit wachtwoord is om toegang te krijgen tot de lijst. Diegene die u wilt uitnodigen wullen dit wachtwoord ter beschikking moeten hebben. Kies dus geen persoonlijk wachtwoord.",
     "Add some here": "Voeg er wat toe hier",
@@ -115,8 +116,6 @@
     "spend": "uitgegeven",
     "You have bought the following things:": "Je hebt de volgende dingen gekocht:",
     "You have contributed to this list:": "Je hebt een bijdrage geleverd aan deze lijst:",
-
-
     "30 Days": "30 dagen",
     "60 Days": "60 dagen",
     "90 Days": "90 dagen",
