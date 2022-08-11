@@ -303,7 +303,7 @@ class ScrapeController extends Controller
     // Scrape ALL articles from specific categorie on 1 page
     private function scrapelittleMoustachePageData($crawler,$sitemap_articles) {
         $articles = [];
-        foreach($crawler->filter('.S4WbK_ li') as $domElement) {
+        foreach($crawler->filter('S4WbK_') as $domElement) {
             $node = new Crawler($domElement);
             $article = new stdClass();
             $article->title = $node->filter('.sMuaBcZ')->text();
