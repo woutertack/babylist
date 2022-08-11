@@ -39,6 +39,9 @@ Route::get('/', [AdminController::class, 'adminCheck'])->name('/');
     Route::get('/overview', [WishlistController::class, 'showWishlist'])->middleware('auth')->name('overview');
     Route::get('/overview/{id}', [ArticlesWishlistController::class, "showListId"])->middleware('auth')->name(('listdetail'));
 
+    //Export your wishlist to excel/csv
+    Route::get('/overview/{id}/export', [ArticlesWishlistController::class, "export"])->middleware('auth')->name(('wishlist.export'));
+
     //delete a wishlist
     Route::delete('/overview/delete/{wishlist_id}' , [WishlistController::class, 'deleteList'])->middleware('auth')->name('deleteList');
 

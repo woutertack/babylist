@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\wishlist;
 
+use App\Exports\WishlistExport;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Wishlist;
 use App\Models\WishlistArticle;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ArticlesWishlistController extends Controller
 {
@@ -37,6 +39,7 @@ class ArticlesWishlistController extends Controller
                  'wishlistId' => $wishlistId
             ]);
         }
+        
 
 
     // Add an article to the wishlist
@@ -61,5 +64,8 @@ class ArticlesWishlistController extends Controller
         return redirect(route('listdetail' , $listId));
     }
 
-    
+    //export a wishlist
+    public function export() {
+        return Excel::download(new WishlistExport, 'wishlist.xlsx');
+    }    
 }

@@ -25,7 +25,7 @@
                         <div class="flex justify-between mt-2">
                             <!-- Info wenslijst-->
                             <div class="justify-start">
-                                <p>{{__('Price')}}: {{$article->article->price}} </p>
+                                <p>{{__('Price')}}: €{{$article->article->price}} </p>
                               
                             </div>
                             <!-- Image wenslijst-->
@@ -40,9 +40,12 @@
                             <button type="submit" class="py-2 px-2  text-sm bg-white hover:bg-indigo-700 hover:text-white focus:ring-indigo-500 focus:ring-offset-indigo-200 text-indigo-500  transition ease-in duration-200 text-center shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg">{{__('Delete')}}</button>
                         </form>                
                     </div>
+                   
                     @endforeach
                 </div>
-
+                <div class="mt-4 flex justify-end">
+                        <a href=" {{ route('wishlist.export' , $wishlist->id)}}" class="text-xs m-5 py-2 px-4 mt-8 bg-indigo-500 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "> {{__('Export wishlist')}}</a>
+                    </div>
             </div>
         @endforeach
     </div>
