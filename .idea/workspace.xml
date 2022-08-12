@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="351c6b63-0a3f-4438-bf51-6a347c2d75ab" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/werkstuk---geboortelijst-woutertack.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/werkstuk---geboortelijst-woutertack.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/babylist/app/Exports/WishlistExport.php" beforeDir="false" afterPath="$PROJECT_DIR$/babylist/app/Exports/WishlistExport.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +173,7 @@
       <option name="presentableId" value="Default" />
       <updated>1659129328991</updated>
       <workItem from="1659129330747" duration="58000" />
-      <workItem from="1660336724919" duration="638000" />
+      <workItem from="1660336724919" duration="1505000" />
     </task>
     <servers />
   </component>
