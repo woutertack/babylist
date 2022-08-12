@@ -20,12 +20,12 @@ class WishlistExport implements FromCollection
         return WishlistArticle::all();
     }
 
-    //cant get a request in there 
+    //cant get a request in there
     // public function test(Request $request)
     // {
     //     $listId = $request->id;
     //     $wishlist = Wishlist::where('id',$listId)->get();
-    
+
     //     $WishlistArticles = WishlistArticle::where('wishlist_id', $listId)->get();
     //     return $WishlistArticles;
     // }
