@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
-use App\Models\Wishlist;
+use App\Models\WishList;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
@@ -19,8 +19,8 @@ class GuestController extends Controller
 
         try {
             $code = $request->code;
-            $codeWishlist = Wishlist::where('code',$code)->first();
-           
+            $codeWishlist = WishList::where('code',$code)->first();
+
                 if($codeWishlist){
                     $wishListid = $codeWishlist->id;
                     return redirect(route('detailList' , $wishListid));
@@ -32,6 +32,6 @@ class GuestController extends Controller
             report($exception);
             return back()->withError($exception->getMessage())->withInput();
         }
-        
+
     }
 }

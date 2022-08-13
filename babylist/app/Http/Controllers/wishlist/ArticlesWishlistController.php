@@ -6,7 +6,7 @@ use App\Exports\WishlistExport;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Article;
-use App\Models\Wishlist;
+use App\Models\WishList;
 use App\Models\WishlistArticle;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -15,7 +15,7 @@ class ArticlesWishlistController extends Controller
     public function showListId(Request $request) {
 
         $listId = $request->id;
-        $wishlist = Wishlist::where('id',$listId)->get();
+        $wishlist = WishList::where('id',$listId)->get();
 
         $WishlistArticles = WishlistArticle::where('wishlist_id', $listId)->get();
         return view('wishlist.articles', [
@@ -39,7 +39,7 @@ class ArticlesWishlistController extends Controller
                  'wishlistId' => $wishlistId
             ]);
         }
-        
+
 
 
     // Add an article to the wishlist
@@ -67,5 +67,5 @@ class ArticlesWishlistController extends Controller
     //export a wishlist
     public function export() {
         return Excel::download(new WishlistExport, 'wishlist.xlsx');
-    }    
+    }
 }

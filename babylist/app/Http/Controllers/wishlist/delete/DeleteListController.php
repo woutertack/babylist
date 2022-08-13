@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\WishList\delete;
 
 use App\Http\Controllers\Controller;
-use App\Models\Wishlist;
+use App\Models\WishList;
 use App\Models\WishlistArticle;
 use Illuminate\Http\Request;
 
