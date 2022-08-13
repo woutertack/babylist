@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="351c6b63-0a3f-4438-bf51-6a347c2d75ab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/babylist/public/build/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/babylist/public/build/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/babylist/app/Http/Controllers/wishlist/WishlistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/babylist/app/Http/Controllers/wishlist/WishlistController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +161,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../webdev2 files/BBlist-main" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -175,7 +175,7 @@
       <updated>1659129328991</updated>
       <workItem from="1659129330747" duration="58000" />
       <workItem from="1660336724919" duration="2169000" />
-      <workItem from="1660377599983" duration="376000" />
+      <workItem from="1660377599983" duration="4970000" />
     </task>
     <servers />
   </component>

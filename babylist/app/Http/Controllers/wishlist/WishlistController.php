@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\wishlist;
 
 use App\Http\Controllers\Controller;
-use App\Models\Wishlist;
+use App\Models\WishList;
 use App\Models\WishlistArticle;
 use Illuminate\Http\Request;
 
@@ -18,10 +18,10 @@ class WishlistController extends Controller
     public function showWishlist(){
         $client = auth()->user()->id;
 
-        $wishlists = Wishlist::where('user_id',$client)->get();
+        $wishlists = WishList::where('user_id',$client)->get();
         return view('wishlist.overview' , [
             'wishlists' => $wishlists
-        ]);         
+        ]);
     }
 
     //delete a wishlist
