@@ -11,7 +11,7 @@ use App\Http\Controllers\ShoppingCart\CheckoutController;
 use App\Http\Controllers\ShoppingCart\WebhookController;
 
 use App\Http\Controllers\wishlist\ArticlesWishlistController;
-use App\Http\Controllers\WishList\create\CreateWishlistController;
+use App\Http\Controllers\wishlist\create\CreateWishlistController;
 use App\Http\Controllers\wishlist\WishlistController;
 
 
@@ -45,7 +45,7 @@ Route::get('/', [AdminController::class, 'adminCheck'])->name('/');
     //delete a wishlist
     Route::delete('/overview/delete/{wishlist_id}' , [WishlistController::class, 'deleteList'])->middleware('auth')->name('deleteList');
 
-    
+
 
     //add articles to your wishlist
     Route::get('/overview/{id}/newarticle', [ArticlesWishlistController::class, "showArticleForm"])->middleware('auth')->name('newArticle');
@@ -77,10 +77,10 @@ Route::get('/', [AdminController::class, 'adminCheck'])->name('/');
     Route::get('/scrape', [ScrapeController::class, 'show'])->middleware('auth')->name('scraper');
     Route::post('/scrape/categories', [ScrapeController::class, 'scrapeCategories'])->middleware('auth')->name('scrape.categories');
     Route::post('/scrape/articles', [ScrapeController::class, 'scrapeArticles'])->middleware('auth')->name('scrape.articles');
-    
+
     //see all articles
     Route::get('/articles', [AllArticlesController::class, 'allArticles'])->middleware('auth')->name('articles.overview');
-    
+
     //delete articles
     Route::delete('/scrape/delete/{article_id}',[AllArticlesController::class, 'deleteArticle'])->middleware('auth')->name('deleteArticle');
 
