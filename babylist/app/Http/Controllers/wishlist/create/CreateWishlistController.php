@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\WishList\create;
+namespace App\Http\Controllers\wishlist\create;
 
 use App\Http\Controllers\Controller;
 use App\Models\WishList;

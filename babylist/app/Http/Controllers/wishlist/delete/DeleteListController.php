@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\WishList\delete;
+namespace App\Http\Controllers\wishlist\delete;
 
 use App\Http\Controllers\Controller;
 use App\Models\WishList;
