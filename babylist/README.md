@@ -25,3 +25,5 @@ For the course Web Development II (2021-2022) Arteveldehogeschool<br>
 ## Admin
 Get access to admin menu by changing your user role to 'admin' in your database <br>
 
+## Hosting
+This application is hosted on: http://207.154.248.214/
